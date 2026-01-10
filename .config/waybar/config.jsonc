@@ -1,127 +1,149 @@
-// -*- mode: jsonc -*-
 {
-     "layer": "top",
-    //"position": "bottom",
-	"mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "reload_style_on_change": false, // make it off when not styling so you save disk being on always for the style.css
-    //"width": 1280,
-    "height": 24,
-    "margin-left": 8,
-    "margin-right": 8,
-    "margin-top": 6,
-    "margin-bottom": 0,
-    "spacing": 0, // Gaps between modules
+  "height": 40,
+  "spacing": 10,
+  "layer": "top",
 
-    "modules-left": [
-        "hyprland/workspaces",
-    ],
-    "modules-center": [
-        "clock",
-    ],
-    "modules-right": [
-        "memory",
-        "cpu",
-        "backlight",
-        "backlight/slider",
-        "pulseaudio",
-        "pulseaudio/slider",
-        "battery",
-        "tray",
-        "custom/power",
-	],
-    
-    "tray": {
-        "icon-size": 16,
-        "spacing": 6
+  "modules-left": [
+    "group/iclock",
+    "group/impris",
+  ],
+  "modules-center": [
+    "hyprland/workspaces",
+  ],
+  "modules-right": [
+    "group/hardware",
+    "group/inetwork",
+    "tray"
+  ],
+
+  "custom/sep": {
+    "format": " "
+  },
+
+  "group/iclock": {
+    "orientation": "horizontal",
+    "modules": ["image#iclock", "clock"],
+  },
+  "image#iclock": {
+    "path": "/home/poyo/.config/waybar/assets/clock.png",
+    "size": 18,
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A, %B %d, %Y}",
+  },
+
+  
+  "group/iwireplumber": {
+    "orientation": "horizontal",
+    "modules": ["image#iwireplumber", "wireplumber"],
+  },
+  "image#iwireplumber": {
+    "path": "/home/poyo/.config/waybar/assets/audio.png",
+    "size": 18,
+  },
+  "wireplumber": {
+    "format": "{volume}%"
+  },
+  
+
+  "group/impris": {
+    "orientation": "horizontal",
+    "modules": ["group/albumart", "mpris"],
+  },
+  "group/albumart": {
+    "orientation": "horizontal",
+    "modules": ["image#albumart"],
+  },
+  "image#albumart": {
+    "exec": "~/.config/waybar/scripts/albumart.sh",
+    "size": 28,
+    "interval": 3,
+  },
+  "mpris": {
+    "format": "{status_icon}: {title}",
+    "player-icons": {
+      "firefox": "󰈹",
+      "default": "",
     },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%I:%M %p}",
-        "format-alt": "{:%d-%m-%Y}"
+    "status-icons": {
+      "playing": "PLAYING",
+      "paused": "PAUSED",
     },
-    "cpu": { "format": "{usage}% " },
-    "memory": { "format": "{}% " },
-    "battery": {
-        "states": { "warning": 30, "critical": 15 },
-        "format-charging": "{capacity}% ",
-        "format-full": " 100%",
-        "format": "{capacity}% {icon}",
-        "format-icons": ["", "", "", "", ""] 
+  },
+
+
+  "group/inetwork": {
+    "orientation": "horizontal",
+    "modules": ["image#inetwork", "network"],
+  },
+  "image#inetwork": {
+    "path": "/home/poyo/.config/waybar/assets/ntwork.png",
+    "size": 18,
+  },
+  "network": {
+    "format": "{ifname} @ {ipaddr}",
+    "format-disconnected": "DISCONNECTED :["
+  },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["image#hardware", "cpu", "temperature", "memory", "disk"],
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 0,
     },
-    "network": {
-        "tooltip": true,
-        "format-wifi": "{icon} ",
-        "format-icons": ["󰤟", "󰤢", "󰤥"],
-        "format-ethernet": "󰈀 ", 
-        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>", 
-        "format-linked": "󰈀 {ifname} (No IP)", 
-        "format-disconnected": " ", 
-        "tooltip-format-disconnected": "Disconnected", 
-        "on-click": "/usr/local/bin/ags -t ControlPanel", 
-        "interval": 2
+  },
+  "image#hardware": {
+    "path": "/home/poyo/.config/waybar/assets/hardware.png",
+    "size": 18,
+  },
+  "custom/gpu": {
+    "exec": "gpu-usage-waybar --text-no-memory",
+    "format": "GPU: {}",
+    "return-type": "json",
+  },
+  "temperature": {
+    "format": "TMP: {temperatureC}°C",
+    "hwmon-path": "/sys/devices/platform/nct6683.2592/hwmon/hwmon6/temp1_input",
+    "interval": 3,
+  },
+  "cpu": {
+    "format": "CPU: {usage}%",
+    "interval": 3,
+  },
+  "memory": {
+    "format": "MEM: {used}/{total}",
+    "interval": 3,
+  },
+  "disk": {
+    "format": "DSK: {used}/{total}",
+    "interval": 3,
+  },
+
+
+  "tray": {
+    "icon-size": 18,
+    "spacing": 9,
+  },
+
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "0",
     },
-    "pulseaudio": {
-        "format": "{icon}",
-        "rotate": 0, 
-        "format-muted": "x", 
-        "tooltip-format": "{icon} {desc} {volume}%", 
-        "scroll-step": 5, 
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "", 
-            "car": "", 
-            "default": ["", "", ""]
-        }
-    },
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-          "1": "",
-          "2": "",
-          "3": "",
-          "4": "",
-          "5": "",
-          "default": "",
-          "active": "" 
-        },
-        "persistent-workspaces": {
-          "*": [ 1, 2, 3, 4, 5 ]
-        }
-    },
-    "backlight": {
-        "tooltip": false,
-        "device": "intel_backlight",
-        "rotate": 0,
-        "format": " {icon}  ", 
-        "format-icons": ["󰃞", "󰃝", "󰃟", "󰃠"], 
-        "scroll-step": 1,
-        "min-length": 2
-    },
-    "backlight/slider": {
-        "min": 5,
-        "max": 100,
-        "rotate": 0,
-        "orientation": "vertical",
-        "device": "intel_backlight",
-        "scroll-step": 1
-    },
-    "custom/power": {
-        "format": "⏻ ",
-        "tooltip": false,
-        "on-click": "~/.config/waybar/power.sh"
-    },
-    "pulseaudio/slider": {
-        "min": 0,
-        "max": 100,
-        "rotate": 0,
-        "orientation": "vertical",
-        "device": "pulseaudio",
-        "scroll-step": 1
-    }
+    "sort-by-number": true
+  },
+
 }
