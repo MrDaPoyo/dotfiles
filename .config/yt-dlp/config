@@ -1,0 +1,13 @@
+--js-runtimes bun
+--remote-components ejs:npm
+
+-o ~/Videos/YouTube/%(title)s.%(ext)s
+
+--embed-thumbnail
+--embed-metadata
+--user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:124.0) Gecko/20100101 Firefox/124.0"
+--live-from-start
+
+-S vcodec:h264,res,acodec:aac
+
+-f "bv*[height<=1080]+ba/b[height<=1080]"

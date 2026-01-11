@@ -9,7 +9,7 @@ window#waybar>box {
   padding-left: 3px;
   padding-right: 3px;
   padding-top: 3px;
-  padding-bottom: 1px;
+  padding-bottom: 0px;
   background: @background;
   border-color: @border @background @background @background;
   border-width: 2px;
