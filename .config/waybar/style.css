@@ -33,6 +33,7 @@ window#waybar>box {
   padding-right: 8px;
   background: @background;
 }
+
 #wireplumber, #mpris, #clock, #network {
   margin-left: 8px;
 }
@@ -42,7 +43,6 @@ window#waybar>box {
   padding-right: 8px;
   padding-top: 0;
   padding-bottom: 0;
-  margin-left: 5px;
 }
 
 #workspaces button.active, #inetwork, #iclock, #custom-gpu, #temperature, #cpu, #memory, #disk{

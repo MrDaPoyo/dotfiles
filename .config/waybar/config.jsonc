@@ -5,13 +5,14 @@
 
   "modules-left": [
     "group/iclock",
-    "group/impris",
+    "hyprland/workspaces"//,
+    // "group/impris",
   ],
   "modules-center": [
-    "hyprland/workspaces",
+    "group/hardware"//,
+    // "hyprland/workspaces",
   ],
   "modules-right": [
-    "group/hardware",
     "group/inetwork",
     "tray"
   ],
@@ -67,7 +68,6 @@
     },
   },
 
-
   "group/inetwork": {
     "orientation": "horizontal",
     "modules": ["image#inetwork", "network"],
@@ -83,7 +83,7 @@
 
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["image#hardware", "cpu", "temperature", "memory", "disk"],
+    "modules": ["image#hardware", "cpu", "custom/gpu", "temperature", "memory", "disk"],
     "drawer": {
       "click-to-reveal": true,
       "transition-duration": 0,
@@ -94,9 +94,9 @@
     "size": 18,
   },
   "custom/gpu": {
-    "exec": "gpu-usage-waybar --text-no-memory",
-    "format": "GPU: {}",
-    "return-type": "json",
+    "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits", // nvidia drivers required for this
+    "format": "GPU: {}%",
+    "interval": 3,
   },
   "temperature": {
     "format": "TMP: {temperatureC}°C",
@@ -115,14 +115,10 @@
     "format": "DSK: {used}/{total}",
     "interval": 3,
   },
-
-
   "tray": {
     "icon-size": 18,
     "spacing": 9,
   },
-
-
   "hyprland/workspaces": {
     "format": "{icon}",
     "on-click": "activate",
