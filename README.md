@@ -19,3 +19,8 @@ Technologies used:
 
 Requirements:
 - Nvidia drivers
+
+Background colour: #301616
+Fonts: 
+- "Departure Mono" (`yay -S otf-departure-mono`)
+- "IosevkaTermSlab Nerd Font" (`sudo pacman -S ttf-iosevkatermslab-nerd`)
