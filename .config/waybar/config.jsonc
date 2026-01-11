@@ -5,17 +5,14 @@
 
   "modules-left": [
     "group/iclock",
-    "hyprland/workspaces"//,
+    "hyprland/workspaces" //,
     // "group/impris",
   ],
   "modules-center": [
-    "group/hardware"//,
+    "group/hardware" //,
     // "hyprland/workspaces",
   ],
-  "modules-right": [
-    "group/inetwork",
-    "tray"
-  ],
+  "modules-right": ["group/inetwork", "tray"],
 
   "custom/sep": {
     "format": " "
@@ -23,58 +20,56 @@
 
   "group/iclock": {
     "orientation": "horizontal",
-    "modules": ["image#iclock", "clock"],
+    "modules": ["image#iclock", "clock"]
   },
   "image#iclock": {
     "path": "/home/poyo/.config/waybar/assets/clock.png",
-    "size": 18,
+    "size": 18
   },
   "clock": {
     "format": "{:%H:%M}",
-    "tooltip-format": "{:%A, %B %d, %Y}",
+    "tooltip-format": "{:%A, %B %d, %Y}"
   },
 
-  
   "group/iwireplumber": {
     "orientation": "horizontal",
-    "modules": ["image#iwireplumber", "wireplumber"],
+    "modules": ["image#iwireplumber", "wireplumber"]
   },
   "image#iwireplumber": {
     "path": "/home/poyo/.config/waybar/assets/audio.png",
-    "size": 18,
+    "size": 18
   },
   "wireplumber": {
     "format": "{volume}%"
   },
-  
 
   "group/impris": {
     "orientation": "horizontal",
-    "modules": ["group/albumart", "mpris"],
+    "modules": ["group/albumart", "mpris"]
   },
   "group/albumart": {
     "orientation": "horizontal",
-    "modules": ["image#albumart"],
+    "modules": ["image#albumart"]
   },
   "mpris": {
     "format": "{status_icon}: {title}",
     "player-icons": {
       "firefox": "󰈹",
-      "default": "",
+      "default": ""
     },
     "status-icons": {
       "playing": "PLAYING",
-      "paused": "PAUSED",
-    },
+      "paused": "PAUSED"
+    }
   },
 
   "group/inetwork": {
     "orientation": "horizontal",
-    "modules": ["image#inetwork", "network"],
+    "modules": ["image#inetwork", "network"]
   },
   "image#inetwork": {
     "path": "/home/poyo/.config/waybar/assets/ntwork.png",
-    "size": 18,
+    "size": 18
   },
   "network": {
     "format": "{ifname} @ {ipaddr}",
@@ -83,41 +78,63 @@
 
   "group/hardware": {
     "orientation": "horizontal",
-    "modules": ["image#hardware", "cpu", "custom/gpu", "temperature", "memory", "disk"],
+    "modules": [
+      "image#hardware",
+      "cpu",
+      "custom/gpu",
+      "temperature",
+      "memory",
+      "disk",
+      "battery"
+    ],
     "drawer": {
       "click-to-reveal": true,
-      "transition-duration": 0,
-    },
+      "transition-duration": 0
+    }
   },
   "image#hardware": {
     "path": "/home/poyo/.config/waybar/assets/hardware.png",
-    "size": 18,
+    "size": 18
   },
   "custom/gpu": {
     "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits", // nvidia drivers required for this
     "format": "GPU: {}%",
-    "interval": 3,
+    "interval": 3
   },
   "temperature": {
     "format": "TMP: {temperatureC}°C",
     "hwmon-path": "/sys/devices/platform/nct6683.2592/hwmon/hwmon6/temp1_input",
-    "interval": 3,
+    "interval": 3
   },
   "cpu": {
     "format": "CPU: {usage}%",
-    "interval": 3,
+    "interval": 3
   },
   "memory": {
     "format": "MEM: {used}/{total}",
-    "interval": 3,
+    "interval": 3
   },
   "disk": {
     "format": "DSK: {used}/{total}",
-    "interval": 3,
+    "interval": 3
+  },
+  "battery": {
+    "bat": "BAT1",
+    "interval": 30,
+    "states": {
+      "warning": 60,
+      "critical": 15
+    },
+    "events": {
+      "on-discharging-warning": "notify-send -u normal 'Low Battery'",
+      "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+      "on-charging-100": "notify-send -u normal 'Battery Full!'"
+    },
+    "format": "BTY: {capacity}%",
   },
   "tray": {
     "icon-size": 18,
-    "spacing": 9,
+    "spacing": 9
   },
   "hyprland/workspaces": {
     "format": "{icon}",
@@ -132,9 +149,8 @@
       "7": "7",
       "8": "8",
       "9": "9",
-      "10": "0",
+      "10": "0"
     },
     "sort-by-number": true
-  },
-
+  }
 }

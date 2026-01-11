@@ -45,7 +45,7 @@ window#waybar>box {
   padding-bottom: 0;
 }
 
-#workspaces button.active, #inetwork, #iclock, #custom-gpu, #temperature, #cpu, #memory, #disk{
+#workspaces button.active, #inetwork, #iclock, #custom-gpu, #temperature, #cpu, #memory, #disk, #battery {
   border-radius: 0;
   border-color: @background-dark @border @border @background-dark ;
   border-width: 2px;
