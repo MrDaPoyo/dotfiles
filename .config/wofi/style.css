@@ -1,0 +1,24 @@
+* {
+    background-color: #301616;
+    color: #dfdab7;
+    font-family: "Departure Mono";
+    margin: 2px;
+    padding: 0;
+}
+
+#input {
+    border: 0;
+    border-bottom: 2px solid #704A4A;
+    border-radius: 0;
+    padding: 5px;
+}
+
+#outer-box {
+    border: 2px solid #704A4A;
+    padding: 0;
+}
+
+#entry:selected {
+    background-color: #704A4A;
+    border: 2px #704A4A solid;
+}
