@@ -1,24 +1,65 @@
-* {
-    background-color: #301616;
-    color: #dfdab7;
-    font-family: "Departure Mono";
-    margin: 2px;
-    padding: 0;
+
+@import ".cache/wal/colors-waybar.css";
+
+*{
+  border: none;
+  box-shadow: none;
+  outline: none;
+  font-family: "Departure Mono";
 }
 
-#input {
-    border: 0;
-    border-bottom: 2px solid #704A4A;
-    border-radius: 0;
-    padding: 5px;
+window {
+  font-size: 14px;
+  font-family: "JetBrains Mono";
+  background-color: @background;
+  opacity: 0.90;
+  border: 2px solid @color6;
 }
 
 #outer-box {
-    border: 2px solid #704A4A;
-    padding: 0;
+  margin: 10px 10px 20px 10px;
+  background-color: @background;
+  opacity: 0.90;
+}
+
+#inner-box {
+  margin: 10px;
+  background-color: @background;
+  opacity: 0.90;
+}
+
+#entry {
+  padding: 5px 10px;
+}
+
+#entry #text {
+  padding: 0px 0px 0px 10px;
+  font-weight: normal;
+  color: @color12;
 }
 
 #entry:selected {
-    background-color: #704A4A;
-    border: 2px #704A4A solid;
+  background-color: @color1;
+}
+
+#entry:selected #text {
+  padding: 0px 0px 0px 10px;
+  font-weight: normal;
+  color: @foreground;
+}
+
+#input {
+  background: transparent;
+  margin: 0px 5px 0px 20px;
+  color: @color7;
+  padding: 5px;
+}
+
+#image {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#scroll {
+  margin: 0px;
 }
