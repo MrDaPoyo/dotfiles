@@ -2,7 +2,7 @@
 @define-color background #301616;
 @define-color background-semidark #210C0C;
 @define-color background-dark #000000;
-@define-color text #ffffff;
+@define-color text #dfdab7;
 @define-color text-inset #aaaaaa;
 
 window#waybar>box {

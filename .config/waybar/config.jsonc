@@ -55,11 +55,6 @@
     "orientation": "horizontal",
     "modules": ["image#albumart"],
   },
-  "image#albumart": {
-    "exec": "~/.config/waybar/scripts/albumart.sh",
-    "size": 28,
-    "interval": 3,
-  },
   "mpris": {
     "format": "{status_icon}: {title}",
     "player-icons": {
