@@ -1,4 +1,9 @@
-@import ".cache/wal/colors-waybar.css";
+@define-color border #704A4A;
+@define-color background #301616;
+@define-color background-semidark #210C0C;
+@define-color background-dark #000000;
+@define-color text #dfdab7;
+@define-color text-inset #aaaaaa;
 
 * {
   border: none;
@@ -9,43 +14,42 @@
 
 window {
   font-size: 14px;
-  font-family: "JetBrains Mono";
-  background-color: @background;
+  background: @background;
   opacity: 0.9;
-  border: 2px solid @color6;
-  border-style: outset;
+  border: 2px solid;
+  border-color: @border @background @background @border;
 }
 
 #outer-box {
   margin: 10px 10px 20px 10px;
-  background-color: @background;
-  opacity: 0.9;
+  opacity: inherit;
 }
 
 #inner-box {
   margin: 10px;
+  padding-top: 5px;
+  border-top: 2px @border dotted;
   background-color: @background;
-  opacity: 0.9;
+  opacity: inherit;
 }
 
 #entry {
   padding: 5px 10px;
-  border: 2px @color6 inset;
-  margin: 3px;
+  border: 2px solid;
+  border-color: @border @background-semidark @background-semidark @border;
+  margin: 5px;
 }
 
 #entry #text {
   padding: 0px 0px 0px 10px;
-  font-weight: normal;
-  color: @color12;
+  color: @text;
 }
 
 #entry:selected {
-  background-color: @color1;
+  background-color: @background-semidark;
 }
 
 #entry:selected #text {
-  padding: 0px 0px 0px 10px;
   font-weight: normal;
   color: @foreground;
 }
@@ -53,10 +57,11 @@ window {
 #input {
   background: transparent;
   margin: 13px 13px 0 13px;
-  color: @color7;
   padding: 1px 10ps;
   border-radius: 0;
-  border: inset 1px @color6;
+  border: 2px solid;
+  border-color: @background-semidark @border @border @background-semidark;
+
 }
 
 #image {
