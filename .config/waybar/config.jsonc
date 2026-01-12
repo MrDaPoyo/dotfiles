@@ -12,12 +12,15 @@
     "group/hardware" //,
     // "hyprland/workspaces",
   ],
-  "modules-right": ["group/inetwork", "tray"],
+  "modules-right": ["group/ibattery", "group/inetwork", "tray"],
 
   "custom/sep": {
     "format": " "
   },
-
+  "group/ibattery": {
+    "orientation": "horizontal",
+    "modules": ["image#ibattery", "battery"]
+  },
   "group/iclock": {
     "orientation": "horizontal",
     "modules": ["image#iclock", "clock"]
@@ -25,6 +28,10 @@
   "image#iclock": {
     "path": "/home/poyo/.config/waybar/assets/clock.png",
     "size": 18
+  },
+  "image#ibattery": {
+    "path":"/home/poyo/.config/waybar/assets/battery.png",
+    "size": 22
   },
   "clock": {
     "format": "{:%H:%M}",
@@ -68,7 +75,7 @@
     "modules": ["image#inetwork", "network"]
   },
   "image#inetwork": {
-    "path": "/home/poyo/.config/waybar/assets/ntwork.png",
+    "path": "/home/poyo/.config/waybar/assets/network.png",
     "size": 18
   },
   "network": {
@@ -84,8 +91,7 @@
       "custom/gpu",
       "temperature",
       "memory",
-      "disk",
-      "battery"
+      "disk"
     ],
     "drawer": {
       "click-to-reveal": true,
@@ -129,6 +135,7 @@
       "on-discharging-warning": "notify-send -u normal 'Low Battery'",
       "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
       "on-charging-100": "notify-send -u normal 'Battery Full!'"
+      
     },
     "format": "BTY: {capacity}%",
   },

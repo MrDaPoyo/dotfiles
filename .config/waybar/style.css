@@ -38,6 +38,10 @@ window#waybar>box {
   margin-left: 8px;
 }
 
+#battery {
+  margin-left: 1px;
+}
+
 #workspaces button {
   padding-left: 8px;
   padding-right: 8px;
@@ -45,7 +49,7 @@ window#waybar>box {
   padding-bottom: 0;
 }
 
-#workspaces button.active, #inetwork, #iclock, #custom-gpu, #temperature, #cpu, #memory, #disk, #battery {
+#workspaces button.active, #inetwork, #iclock, #custom-gpu, #temperature, #cpu, #memory, #disk, #ibattery {
   border-radius: 0;
   border-color: @background-dark @border @border @background-dark ;
   border-width: 2px;
@@ -53,6 +57,10 @@ window#waybar>box {
   padding-left: 8px;
   padding-right: 8px;
   background: @background-semidark;
+}
+
+#ibattery {
+  padding-left: 3px;
 }
 
 #tray menu menuitem:hover {
@@ -63,6 +71,7 @@ window#waybar>box {
 #cpu {
   margin-left: 8px;
 }
+
 #custom-gpu, #temperature, #cpu, #memory, #disk {
   padding-left: 5px;
   padding-right: 5px;
