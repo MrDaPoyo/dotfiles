@@ -26,6 +26,15 @@ Fonts:
 - "IosevkaTermSlab Nerd Font" (`sudo pacman -S ttf-iosevkatermslab-nerd`)
 
 ### Commands to run
+Long pacman -S (incomplete)
+```
+sudo pacman -S nemo kitty hyprland gvfs
+
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+gsettings set org.cinnamon.desktop.default-applications.terminal exec
+```
+
+
 ```
 wal -i ~/.config/hypr/assets/beige-anime-girl-snowy-cropped.png -b 301616 --cols16 lighten --fg dfdab7
 ln -s $HOME/.cache/wal/colors-discord.css $HOME/.config/vesktop/themes/pywal-vencord.theme.css
