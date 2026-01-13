@@ -137,7 +137,7 @@
       "on-charging-100": "notify-send -u normal 'Battery Full!'"
       
     },
-    "format": "BTY: {capacity}%",
+    "format": "{capacity}%",
   },
   "tray": {
     "icon-size": 18,
