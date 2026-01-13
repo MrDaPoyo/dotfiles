@@ -1,4 +1,4 @@
-These are my dotfiles!
+186;9uThese are my dotfiles!
 
 Technologies used:
 
@@ -29,6 +29,11 @@ Fonts:
 Long pacman -S (incomplete)
 ```
 sudo pacman -S nemo kitty hyprland gvfs
+yay -S ttf-ms-fonts
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+git clone https://github.com/elkowar/eww && cd eww && cargo build --release --no-default-features --features=wayland && cp target/release/eww ~/.local/bin
 
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.cinnamon.desktop.default-applications.terminal exec
