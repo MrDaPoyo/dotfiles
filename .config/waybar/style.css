@@ -80,7 +80,6 @@ window#waybar>box {
 #workspaces button.active {
   padding-left: 8px;
   padding-right: 8px;
-  margin-left: 5px;
 }
 
 #custom-sep {
