@@ -48,3 +48,13 @@ ln -s $HOME/.cache/wal/colors-discord.css $HOME/.config/vesktop/themes/pywal-ven
 
 ### Things to do
 You gotta use Vencord's "ClientTheme" plugin and set its color to the background color (#301616)
+---
+
+You gotta add 
+```
+#IdleAction=suspend
+#IdleActionSec=15min
+```
+
+to `/etc/systemd/logind.conf`
+---
