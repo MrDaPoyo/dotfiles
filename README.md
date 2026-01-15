@@ -29,7 +29,7 @@ Fonts:
 ### Commands to run
 Long pacman -S (incomplete)
 ```
-sudo pacman -S nemo kitty hyprland gvfs fastfetch micro wofi
+sudo pacman -S nemo nemo-fileroller kitty hyprland gvfs fastfetch micro wofi
 yay -S ttf-ms-fonts
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
