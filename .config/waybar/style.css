@@ -3,7 +3,6 @@
 @define-color background-semidark #210C0C;
 @define-color background-dark #000000;
 @define-color text #dfdab7;
-@define-color text-inset #aaaaaa;
 
 window#waybar>box {
   padding-left: 3px;
