@@ -36,6 +36,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 git clone https://github.com/elkowar/eww && cd eww && cargo build --release --no-default-features --features=wayland && cp target/release/eww ~/.local/bin
 
+cp -r ~/.config/_assets/Candy-Pixel-Brown-vr3 ~/.local/share/icons && hyprctl setcursor Candy-Pixel-Brown-vr3 24
+
 xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
 gsettings set org.cinnamon.desktop.default-applications.terminal exec
 ```
