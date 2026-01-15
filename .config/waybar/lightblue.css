@@ -1,0 +1,7 @@
+/* optional blue theme */
+/* wal -i ~/.config/_assets/anime-sunset-car.png --cols16 darken -b 262a48 */
+@define-color border #8e95cb;
+@define-color background #4b5391;
+@define-color background-semidark #262a48;
+@define-color background-dark #000000;
+@define-color text lightblue;
