@@ -37,15 +37,6 @@
     "format": "{:%H:%M}",
     "tooltip-format": "{:%A, %B %d, %Y}"
   },
-
-  "group/iwireplumber": {
-    "orientation": "horizontal",
-    "modules": ["image#iwireplumber", "wireplumber"]
-  },
-  "image#iwireplumber": {
-    "path": "/home/poyo/.config/waybar/assets/audio.png",
-    "size": 18
-  },
   "wireplumber": {
     "format": "{volume}%"
   },
