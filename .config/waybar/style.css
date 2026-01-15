@@ -16,7 +16,7 @@ window#waybar>box {
 }
 
 * {
-  font-family: "IosevkaTermSlab Nerd Font";
+  font-family: "Departure Mono";
   font-size: 16px;
   font-weight: 400;
   color: @text;
