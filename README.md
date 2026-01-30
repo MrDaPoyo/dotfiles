@@ -60,3 +60,15 @@ You gotta add
 
 to `/etc/systemd/logind.conf`
 ---
+
+If you use the RPI imager, run
+
+`sudo cp ~/.config/_scripts/rpi-imager-launch /usr/local/bin/rpi-imager-launch && sudo chmod +x /usr/local/bin/rpi-imager-launch && sudo nano /usr/share/applications/com.raspberrypi.rpi-imager.desktop` and change the `Exec` line to
+
+```
+Exec=/usr/local/bin/rpi-imager-launch %u
+```
+
+This ensures that when you click the app in wofi, the wrapper script runs, preserving the environment variables necessary for Wayland.
+
+Also run `update-desktop-database`.
