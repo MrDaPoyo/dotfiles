@@ -1,18 +1,15 @@
 {
-  "position": "top",
-  "mod": "dock",
-  "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
   "height": 40,
   "spacing": 10,
   "layer": "top",
   "modules-left": [
     "group/iclock",
-    "hyprland/workspaces"
+    "hyprland/workspaces" //,
+    // "group/impris",
   ],
   "modules-center": [
-    "group/hardware"
+    "group/hardware" //,
+    // "hyprland/workspaces",
   ],
   "modules-right": [
     "group/ibattery",
@@ -25,12 +22,14 @@
   "group/ibattery": {
     "orientation": "horizontal",
     "modules": [
+      "image#ibattery",
       "battery"
     ]
   },
   "group/iclock": {
     "orientation": "horizontal",
     "modules": [
+      "image#iclock",
       "clock"
     ]
   },
@@ -43,7 +42,7 @@
     "size": 22
   },
   "clock": {
-    "format": "󰥔 {:%H:%M}",
+    "format": "{:%H:%M}",
     "tooltip-format": "{:%A, %B %d, %Y}"
   },
   "wireplumber": {
@@ -76,6 +75,7 @@
   "group/inetwork": {
     "orientation": "horizontal",
     "modules": [
+      "image#inetwork",
       "network"
     ]
   },
@@ -84,13 +84,12 @@
     "size": 18
   },
   "network": {
-    "format": "󰲐 {ifname} @ {ipaddr}",
+    "format": "{ifname} @ {ipaddr}",
     "format-disconnected": "DISCONNECTED :["
   },
   "group/hardware": {
     "orientation": "horizontal",
     "modules": [
-      "custom/quit",
       "cpu",
       "custom/gpu",
       "temperature",
@@ -101,10 +100,6 @@
       "click-to-reveal": true,
       "transition-duration": 0
     }
-  },
-  "custom/quit": {
-    "format": "󰖫 ",
-    "tooltip": false
   },
   "image#hardware": {
     "path": "/home/poyo/.config/waybar/assets/hardware.png",
@@ -144,7 +139,7 @@
       "on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
       "on-charging-100": "notify-send -u normal 'Battery Full!'"
     },
-    "format": "󰂄 {capacity}%",
+    "format": "{capacity}%",
   },
   "tray": {
     "icon-size": 18,

@@ -33,12 +33,12 @@ window#waybar>box {
   background: @background;
 }
 
-#wireplumber, #mpris {
+#wireplumber, #mpris, #clock, #network {
   margin-left: 8px;
 }
 
 #battery {
-  margin-left: 5px;
+  margin-left: 1px;
 }
 
 #workspaces button {
